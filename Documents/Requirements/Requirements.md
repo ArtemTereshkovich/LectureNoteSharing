@@ -28,7 +28,8 @@ Lecture Note Sharing - это сайт для обмена конспектам�
   ![RegisterPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/documentation/Documents/Requirements/Images/Mockups/RegisterPage.JPG)
 - Страница авторизации
   ![LoginPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/documentation/Documents/Requirements/Images/Mockups/LoginPage.JPG)
-  
+#### 2.3. Интерфейс пользователя <a name="2.3"></a>
+  Данное приложение будет использоваться студентами для распространения конспектов по учебным предметам. 
  ### 3. Системные требования <a name="3"></a>
 #### 3.1.1 Основные функции <a name="3.1.1"></a>
  ##### 3.1.1.1 Просмотр конспектов<a name="3.1.1.1"></a>
