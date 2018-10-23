@@ -21,13 +21,13 @@ Lecture Note Sharing - это сайт для обмена конспектов 
 Проект использует фреймфорк ASP.NET Core и библиотеку для web-client Angular.
 #### 2.2. Интерфейс пользователя <a name="2.2"></a>
 - Главная страница
-  ![MainPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/documentation/Documents/Requirements/Images/Mockups/MainPage.JPG)
+  ![MainPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/Requirements/Images/Mockups/MainPage.JPG)
 - Страница конспекта
-  ![LectureNotePage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/documentation/Documents/Requirements/Images/Mockups/LectureNotePage.JPG)
+  ![LectureNotePage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/Requirements/Images/Mockups/LectureNotePage.JPG)
 - Страница регистрации
-  ![RegisterPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/documentation/Documents/Requirements/Images/Mockups/RegisterPage.JPG)
+  ![RegisterPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/Requirements/Images/Mockups/RegisterPage.JPG)
 - Страница авторизации
-  ![LoginPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/documentation/Documents/Requirements/Images/Mockups/LoginPage.JPG)
+  ![LoginPage](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/Requirements/Images/Mockups/LoginPage.JPG)
 #### 2.3. Интерфейс пользователя <a name="2.3"></a>
   Данное приложение будет использоваться студентами для распространения конспектов по учебным предметам. 
  ### 3. Системные требования <a name="3"></a>
