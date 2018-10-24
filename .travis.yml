@@ -12,7 +12,8 @@ addons:
   chrome: stable
 
 before_script:
-  - cd src/Client
+  - cd src/Client  
+  - npm install
 
 script:
   - npm run lint
