@@ -7,9 +7,12 @@ sudo: false
 addons:
   chrome: stable
 
+cache:
+  directories:
+    - src/Client/node_modules
+
 before_script:
-  - cd src/Client  
-  - npm install
+  - cd src/Client
 
 script:
   - ng lint
