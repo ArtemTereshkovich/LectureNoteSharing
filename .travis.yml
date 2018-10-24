@@ -6,7 +6,7 @@ sudo: false
 
 cache:
   directories:
-    - node_modules
+    - src/Client/node_modules
 
 addons:
   chrome: stable
