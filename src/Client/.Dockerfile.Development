@@ -1,0 +1,11 @@
+From node
+
+Workdir /src/webapp
+ENV PATH /src/webapp/node_modules/.bin:$PATH
+COPY package*.json /src/webapp/
+
+RUN npm install
+
+copy . /src/webapp/
+
+CMD ng serve --host 0.0.0.0
