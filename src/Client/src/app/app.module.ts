@@ -10,11 +10,11 @@ import { HomeCloudtagpanelComponent } from './home/home-cloudtagpanel/home-cloud
 
 @NgModule({
   declarations: [
+    HomeCloudtagpanelComponent,
+    HomeSearchpanelComponent,
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    HomeSearchpanelComponent,
-    HomeCloudtagpanelComponent
   ],
   imports: [
     BrowserModule,
