@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
-import { HomeCloudtagpanelComponent } from './home-cloudtagpanel/home-cloudtagpanel.component';
-import { HomeSearchpanelComponent } from './home-searchpanel/home-searchpanel.component';
+import { CloudtagpanelComponent } from './cloudtagpanel/cloudtagpanel.component';
+import { SearchpanelComponent } from './searchpanel/searchpanel.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,8 +11,8 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         HomeComponent,
-        HomeCloudtagpanelComponent,
-        HomeSearchpanelComponent
+        CloudtagpanelComponent,
+        SearchpanelComponent
       ]
     })
     .compileComponents();
