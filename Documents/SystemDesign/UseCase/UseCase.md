@@ -1,9 +1,11 @@
 # Варианты использования
+
 ---
 
 ![UseCaseDiagram](https://github.com/artemtereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/UseCase/UseCase.png)
 
 # Содержание
+
 1 [Актёры](#1) <br>
 2 [Варианты использования](#2) <br>
   2.1 [Зарегистрироваться](#2.1) <br>
