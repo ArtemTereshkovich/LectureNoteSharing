@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CloudtagpanelComponent } from './cloudtagpanel/cloudtagpanel.component';
 import { SearchpanelComponent } from './searchpanel/searchpanel.component';
+import { LectureNotesListConfig } from '../shared/lecturenotes/lecturenotes-list/lecutrenotes-list.config';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,16 @@ export class HomeComponent implements OnInit {
   @ViewChild(SearchpanelComponent)
   public searchPanelComponent: SearchpanelComponent;
 
+  lectureNoteListConfig: LectureNotesListConfig;
+
   constructor() { }
 
   ngOnInit() {
+    this.lectureNoteListConfig = {
+      filter: null,
+      countPerPage: 5,
+      currentPage: 1
+    };
   }
 
 }

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { CloudtagpanelComponent } from './cloudtagpanel/cloudtagpanel.component';
 import { SearchpanelComponent } from './searchpanel/searchpanel.component';
-import { LecturenotesListComponent } from './lecturenotes-list/lecturenotes-list.component';
+import { SharedModule } from '../shared/shared.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -10,11 +10,13 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        SharedModule
+      ],
       declarations: [
         HomeComponent,
         CloudtagpanelComponent,
         SearchpanelComponent,
-        LecturenotesListComponent
       ]
     })
     .compileComponents();

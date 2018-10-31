@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { LectureNotesListConfig } from './lecutrenotes-list.config';
 
 @Component({
   selector: 'app-lecturenotes-list',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LecturenotesListComponent implements OnInit {
 
+  @Input()
+  private defaultConfig: LectureNotesListConfig;
+  private totalItems = 0;
+  private load: Boolean;
+
   constructor() { }
 
   ngOnInit() {
+    this.load = true;
   }
 
 }

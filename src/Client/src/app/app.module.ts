@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { RouterModule } from '@angular/router';
 import { JWTService } from './shared/services/jwt.service';
+import { SharedModule } from './shared/shared.module';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -16,6 +17,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     HeaderComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     rootRouting,
     HomeModule,
