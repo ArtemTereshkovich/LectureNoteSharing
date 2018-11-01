@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { RouterModule } from '@angular/router';
 import { JWTService } from './shared/services/jwt.service';
 import { SharedModule } from './shared/shared.module';
+import { LectureNotesServiceMock } from './shared/mocks/lecturenotesservice.mock';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -24,7 +25,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     BrowserAnimationsModule
   ],
   providers: [
-      JWTService
+      JWTService,
+      LectureNotesServiceMock
   ],
   bootstrap: [AppComponent]
 })

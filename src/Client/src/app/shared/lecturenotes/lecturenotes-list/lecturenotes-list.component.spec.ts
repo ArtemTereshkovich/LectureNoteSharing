@@ -5,14 +5,15 @@ import { LecturenotePreviewComponent } from '../lecturenote-preview/lecturenote-
 import { FormsModule } from '@angular/forms';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LectureNotesListConfig } from './lecutrenotes-list.config';
+import { LectureNotesServiceMock } from '../../mocks/lecturenotesservice.mock';
 
 @Component({
-  selector  : 'app-test-cmp',
-  template  : '<app-lecturenotes-list [defaultConfig]="mockDefaultConfig"></app-lecturenotes-list>'
- })
- class TestWrapperComponent {
-     mockDefaultConfig = new LectureNotesListConfig(); // mock your input
- }
+  selector: 'app-test-cmp',
+  template: '<app-lecturenotes-list [defaultConfig]="mockDefaultConfig"></app-lecturenotes-list>'
+})
+class TestWrapperComponent {
+  mockDefaultConfig = new LectureNotesListConfig(); // mock your input
+}
 
 describe('LecturenotesListComponent', () => {
   let component: LecturenotesListComponent;
@@ -23,15 +24,18 @@ describe('LecturenotesListComponent', () => {
       imports: [
         PaginationModule.forRoot(),
         FormsModule
-       ],
+      ],
       declarations: [
         TestWrapperComponent,
         LecturenotesListComponent,
         LecturenotePreviewComponent
-     ],
-     schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      ],
+      providers: [
+        LectureNotesServiceMock
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

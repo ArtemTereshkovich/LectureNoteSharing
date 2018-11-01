@@ -2,21 +2,21 @@ import { UserView } from './user.models';
 import { LectureNoteTagView } from './tag.models';
 
 export class LectureNoteDTO {
-    id: String;
-    title: String;
-    description: String;
-    autorid: String;
-    text: String;
+    id: string;
+    title: string;
+    description: string;
+    autorid: string;
+    text: string;
     dateOfCreate: Date;
-    tagsId: Array<String>;
+    tagsId: Array<string>;
 }
 
 export class LectureNote {
-    id: String;
-    title: String;
-    description: String;
+    id: string;
+    title: string;
+    description: string;
     autor: UserView;
-    text: String;
+    text: string;
     dateOfCreate: Date;
     tags: Array<LectureNoteTagView>;
 }
@@ -27,6 +27,13 @@ export class LectureNoteView {
     description: string;
     text: string;
     dateOfCreation: Date;
-    autorUsername: String;
+    autorUsername: string;
     tags: Array<LectureNoteTagView>;
+}
+
+export class LectureNoteEdit {
+    id: string;
+    title: string;
+    description: string;
+    text: string;
 }
