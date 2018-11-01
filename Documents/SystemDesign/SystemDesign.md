@@ -1,11 +1,11 @@
-### Диаграмма использования<a name="1"></a>
+### Диаграмма использования
 
-![Диаграмма использования](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/UseCase/UseCase.md)
+([Диаграмма использования](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/UseCase/UseCase.md))
 
-### Диаграмма активности<a name="1"></a>
+### Диаграмма активности
 
-![Диаграмма активности](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/Activities/Activities.md)
+([Диаграмма активности](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/Activities/Activities.md))
 
-### Диаграмма последовательности<a name="1"></a>
+### Диаграмма последовательности
 
-![Диаграмма последовательности](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/Sequences/Sequence.md)
+([Диаграмма последовательности](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/Sequences/Sequence.md))
