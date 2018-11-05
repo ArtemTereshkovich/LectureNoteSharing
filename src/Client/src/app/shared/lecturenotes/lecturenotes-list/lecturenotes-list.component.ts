@@ -25,10 +25,10 @@ export class LecturenotesListComponent implements OnInit {
   }
 
   private lectureNoteQuery: LectureNotesQuery;
-  private totalItems: number;
-  private loading: Boolean;
-  private currentPage: number;
-  private lectureNotes: Array<LectureNotePreview>;
+  public totalItems: number;
+  public loading: Boolean;
+  public currentPage: number;
+  public lectureNotes: Array<LectureNotePreview>;
 
   constructor(
     private lectureNoteService: LectureNotesServiceMock

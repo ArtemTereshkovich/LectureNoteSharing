@@ -9,7 +9,7 @@ import { LectureNotePreview } from '../../models/lecturenotes.models';
 export class LecturenotePreviewComponent implements OnInit {
 
   @Input()
-  private lectureNote: LectureNotePreview;
+  public lectureNote: LectureNotePreview;
 
   constructor() { }
 

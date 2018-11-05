@@ -9,7 +9,7 @@ export class LecturenotePreviewRatingComponent implements OnInit {
 
   @Input()
   private lectureNoteId: string;
-  private loading: Boolean;
+  public loading: Boolean;
 
   constructor() {
     this.loading = true;
