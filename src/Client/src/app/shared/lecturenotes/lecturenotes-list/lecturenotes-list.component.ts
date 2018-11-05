@@ -24,7 +24,7 @@ export class LecturenotesListComponent implements OnInit {
     this.currentPage = defaultConfig.currentPage;
   }
 
-  private lectureNoteQuery: LectureNotesQuery;
+  public lectureNoteQuery: LectureNotesQuery;
   public totalItems: number;
   public loading: Boolean;
   public currentPage: number;
