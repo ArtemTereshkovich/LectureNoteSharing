@@ -1,10 +1,6 @@
-export class UserView {
-    id: String;
-    username: String;
-}
-
 export class User {
+    id: string;
     firstName: String;
     secondName: String;
-    Login: String;
+    login: String;
 }

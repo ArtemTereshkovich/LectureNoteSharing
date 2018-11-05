@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LectureNotesListConfig } from './lecutrenotes-list.config';
+import { LectureNotesListOptions } from './lecutrenotes-list.config';
 import { LectureNotesServiceMock } from '../../mocks/lecturenotesservice.mock';
-import { LectureNoteView } from '../../models/lecturenotes.models';
+import { LectureNotePreview } from '../../models/lecturenotes.models';
+import { LectureNotesQuery } from '../../models/lecturenotesservice.model';
 
 @Component({
   selector: 'app-lecturenotes-list',
@@ -9,25 +10,46 @@ import { LectureNoteView } from '../../models/lecturenotes.models';
   styleUrls: ['./lecturenotes-list.component.css']
 })
 export class LecturenotesListComponent implements OnInit {
+
   @Input()
-  private defaultConfig: LectureNotesListConfig;
-  private totalItems;
+  set defaultConfig(defaultConfig: LectureNotesListOptions) {
+    this.lectureNoteQuery = {
+      ratingSort: true,
+      offset: 0,
+      limit: defaultConfig.countPerPage,
+      filter: {
+          tags: [ defaultConfig.filter === null ? null :  this.defaultConfig.filter.defaultTag  ]
+      }
+    };
+    this.currentPage = defaultConfig.currentPage;
+  }
+
+  private lectureNoteQuery: LectureNotesQuery;
+  private totalItems: number;
   private loading: Boolean;
-  private lectureNotes: Array<LectureNoteView>;
+  private currentPage: number;
+  private lectureNotes: Array<LectureNotePreview>;
 
   constructor(
     private lectureNoteService: LectureNotesServiceMock
   ) {
     this.lectureNotes = [];
     this.totalItems = 0;
-    this.loading = true;
    }
 
   ngOnInit() {
+    this.loading = true;
     this.loadLectureNotes();
   }
 
   loadLectureNotes() {
+    this.lectureNoteQuery.offset = this.currentPage * this.lectureNoteQuery.limit;
     this.loading = true;
+
+    this.lectureNoteService.getLectureNotesPreview(this.lectureNoteQuery).subscribe(data => {
+      this.totalItems = data.count;
+      this.lectureNotes = data.lectureNotes;
+      this.loading = false;
+    });
   }
 }

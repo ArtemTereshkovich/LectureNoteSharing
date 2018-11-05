@@ -6,6 +6,8 @@ import { LecturenotesListComponent } from './lecturenotes/lecturenotes-list/lect
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { FormsModule } from '@angular/forms';
 import { LecturenotePreviewComponent } from './lecturenotes/lecturenote-preview/lecturenote-preview.component';
+import { LecturenotePreviewRatingComponent } from './lecturenotes/lecturenote-preview-rating/lecturenote-preview-rating.component';
+import { LecturenotePreviewTagsComponent } from './lecturenotes/lecturenote-preview-tags/lecturenote-preview-tags.component';
 
 @NgModule({
     imports: [
@@ -16,6 +18,8 @@ import { LecturenotePreviewComponent } from './lecturenotes/lecturenote-preview/
         FormsModule
     ],
     declarations: [
+        LecturenotePreviewRatingComponent,
+        LecturenotePreviewTagsComponent,
         LecturenotesListComponent,
         LecturenotePreviewComponent
     ],

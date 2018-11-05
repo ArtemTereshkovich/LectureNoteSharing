@@ -1,4 +1,4 @@
-export class LectureNotesListConfig {
+export class LectureNotesListOptions {
     countPerPage: number;
     currentPage: number;
     filter: LectureNotesListFilter;

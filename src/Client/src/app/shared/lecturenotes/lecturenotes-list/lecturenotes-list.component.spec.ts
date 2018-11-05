@@ -4,20 +4,24 @@ import { PaginationModule } from 'ngx-bootstrap';
 import { LecturenotePreviewComponent } from '../lecturenote-preview/lecturenote-preview.component';
 import { FormsModule } from '@angular/forms';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { LectureNotesListConfig } from './lecutrenotes-list.config';
+import { LectureNotesListOptions } from './lecutrenotes-list.config';
 import { LectureNotesServiceMock } from '../../mocks/lecturenotesservice.mock';
 
 @Component({
-  selector: 'app-test-cmp',
+  selector: 'app-test-cmp-lecturenotelist',
   template: '<app-lecturenotes-list [defaultConfig]="mockDefaultConfig"></app-lecturenotes-list>'
 })
-class TestWrapperComponent {
-  mockDefaultConfig = new LectureNotesListConfig(); // mock your input
+class TestLecturenotesListComponentWrapperComponent {
+  mockDefaultConfig: LectureNotesListOptions = {
+    filter: null,
+    countPerPage: 5,
+    currentPage: 1
+  };
 }
 
 describe('LecturenotesListComponent', () => {
   let component: LecturenotesListComponent;
-  let fixture: ComponentFixture<TestWrapperComponent>;
+  let fixture: ComponentFixture<TestLecturenotesListComponentWrapperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,7 +30,7 @@ describe('LecturenotesListComponent', () => {
         FormsModule
       ],
       declarations: [
-        TestWrapperComponent,
+        TestLecturenotesListComponentWrapperComponent,
         LecturenotesListComponent,
         LecturenotePreviewComponent
       ],
@@ -39,7 +43,7 @@ describe('LecturenotesListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TestWrapperComponent);
+    fixture = TestBed.createComponent(TestLecturenotesListComponentWrapperComponent);
     component = fixture.debugElement.children[0].componentInstance;
     fixture.detectChanges();
   });

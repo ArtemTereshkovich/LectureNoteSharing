@@ -1,4 +1,11 @@
-<p>
-  lecturenotes-list works!
-  <pagination [hidden]="loading" [totalItems]="totalItems" [(ngModel)]="defaultConfig.currentPage"></pagination>
-</p>
+<app-lecturenote-preview 
+  *ngFor="let lectureNote of lectureNotes"
+  [lectureNote]=lectureNote>  
+</app-lecturenote-preview>
+
+<pagination 
+  [hidden]="loading" 
+  [itemsPerPage]="lectureNoteQuery.limit" 
+  [totalItems]="totalItems" 
+  [(ngModel)]="currentPage">
+</pagination>

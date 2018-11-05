@@ -4,6 +4,7 @@ import { CloudtagpanelComponent } from './cloudtagpanel/cloudtagpanel.component'
 import { SearchpanelComponent } from './searchpanel/searchpanel.component';
 import { SharedModule } from '../shared/shared.module';
 import { LectureNotesServiceMock } from '../shared/mocks/lecturenotesservice.mock';
+import { LectureNotePreview } from '../shared/models/lecturenotes.models';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
