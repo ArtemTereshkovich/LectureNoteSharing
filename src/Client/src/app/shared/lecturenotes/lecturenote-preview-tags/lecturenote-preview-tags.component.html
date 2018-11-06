@@ -1,3 +1,8 @@
-<p>
-  lecturenote-preview-tags works!
-</p>
+<ul class="tags">
+  <li
+    *ngFor='let tag of tags'>
+    <a href="#" class="tag">
+      {{ tag.text }}
+    </a>
+  </li> 
+</ul>

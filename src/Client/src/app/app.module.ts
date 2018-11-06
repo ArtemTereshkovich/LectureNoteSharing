@@ -10,6 +10,7 @@ import { JWTService } from './shared/services/jwt.service';
 import { SharedModule } from './shared/shared.module';
 import { LectureNotesServiceMock } from './shared/mocks/lecturenotesservice.mock';
 import { LectureNoteTagServiceMock } from './shared/mocks/lecturenotetagservice.mock';
+import { LectureNoteRatingServiceMock } from './shared/mocks/lecturenoteratingservice.mock';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -28,7 +29,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   providers: [
       JWTService,
       LectureNotesServiceMock,
-      LectureNoteTagServiceMock
+      LectureNoteTagServiceMock,
+      LectureNoteRatingServiceMock
   ],
   bootstrap: [AppComponent]
 })

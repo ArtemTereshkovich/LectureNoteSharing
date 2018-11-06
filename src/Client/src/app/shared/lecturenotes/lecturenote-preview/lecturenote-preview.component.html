@@ -5,7 +5,14 @@
     <p class="lead">Date of creation : {{ lectureNote.dateOfCreate | date: 'longDate' }}</p>
     <button class="btn btn-secondary">Read</button>
     <div class="card-footer text-muted">
-
+      <app-lecturenote-preview-rating
+        [lectureNoteId]='lectureNote.id'        
+      >        
+      </app-lecturenote-preview-rating>
+      <app-lecturenote-preview-tags
+        [tagsId]='lectureNote.tagsId'
+      >
+      </app-lecturenote-preview-tags>
     </div>
   </div>
 </div>

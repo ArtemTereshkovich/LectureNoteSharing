@@ -35,10 +35,10 @@ export class LecturenotesListComponent implements OnInit {
   ) {
     this.lectureNotes = [];
     this.totalItems = 0;
+    this.loading = true;
    }
 
   ngOnInit() {
-    this.loading = true;
     this.loadLectureNotes();
   }
 
