@@ -5,6 +5,8 @@ import { SearchpanelComponent } from './searchpanel/searchpanel.component';
 import { SharedModule } from '../shared/shared.module';
 import { LectureNotesServiceMock } from '../shared/mocks/lecturenotesservice.mock';
 import { LectureNotePreview } from '../shared/models/lecturenotes.models';
+import { LectureNoteTagServiceMock } from '../shared/mocks/lecturenotetagservice.mock';
+import { LectureNoteRatingServiceMock } from '../shared/mocks/lecturenoteratingservice.mock';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -21,7 +23,9 @@ describe('HomeComponent', () => {
         SearchpanelComponent,
       ],
       providers: [
-        LectureNotesServiceMock
+        LectureNotesServiceMock,
+        LectureNoteTagServiceMock,
+        LectureNoteRatingServiceMock
       ],
     })
     .compileComponents();

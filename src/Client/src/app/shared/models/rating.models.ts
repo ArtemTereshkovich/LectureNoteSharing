@@ -2,6 +2,7 @@ export class RatingPreview {
     id: string;
     lectureNoteId: string;
     rating: number;
+    isFavorite: Boolean;
 }
 
 export class UserRatingPreview {
@@ -9,3 +10,4 @@ export class UserRatingPreview {
     lectureNoteId: string;
     userId: string;
 }
+

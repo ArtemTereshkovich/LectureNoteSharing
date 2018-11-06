@@ -16,4 +16,7 @@ export class LecturenotePreviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  public readButtonClick(id: string): void {
+    console.log(id);
+  }
 }

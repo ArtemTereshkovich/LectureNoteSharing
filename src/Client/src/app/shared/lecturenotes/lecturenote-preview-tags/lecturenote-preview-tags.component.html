@@ -1,8 +1,12 @@
-<ul class="tags">
+<ul [hidden]='loading' class="tags">
   <li
     *ngFor='let tag of tags'>
-    <a href="#" class="tag">
+
+    <a href="#" 
+      class="tag" 
+      (click)='tagClick(tag.id)'>
       {{ tag.text }}
     </a>
+    
   </li> 
 </ul>

@@ -33,4 +33,8 @@ export class LecturenotePreviewTagsComponent implements OnInit {
     });
   }
 
+  public tagClick(id: string): void {
+    console.log(id);
+  }
+
 }

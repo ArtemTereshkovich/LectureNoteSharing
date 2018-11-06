@@ -1,11 +1,14 @@
 <app-lecturenote-preview 
+  [hidden]='loading'
   *ngFor="let lectureNote of lectureNotes"
   [lectureNote]=lectureNote>  
 </app-lecturenote-preview>
 
 <pagination 
+  class="pg-dark"
   [hidden]="loading" 
   [itemsPerPage]="lectureNoteQuery.limit" 
   [totalItems]="totalItems" 
-  [(ngModel)]="currentPage">
+  [(ngModel)]="currentPage"
+  (pageChanged)="pageChanged($event)">
 </pagination>

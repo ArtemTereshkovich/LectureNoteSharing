@@ -54,7 +54,7 @@ export class LectureNotesServiceMock {
         return of(
             {
                 lectureNotes: notes,
-                count: 20
+                count: query.offset + 10
             }
         );
     }

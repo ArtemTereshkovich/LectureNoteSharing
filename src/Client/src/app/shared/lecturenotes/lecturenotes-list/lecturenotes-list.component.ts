@@ -42,7 +42,7 @@ export class LecturenotesListComponent implements OnInit {
     this.loadLectureNotes();
   }
 
-  loadLectureNotes() {
+  loadLectureNotes(): void  {
     this.lectureNoteQuery.offset = this.currentPage * this.lectureNoteQuery.limit;
     this.loading = true;
 
@@ -51,5 +51,10 @@ export class LecturenotesListComponent implements OnInit {
       this.lectureNotes = data.lectureNotes;
       this.loading = false;
     });
+  }
+
+  pageChanged(event: any): void {
+    this.currentPage = event.page;
+    this.loadLectureNotes();
   }
 }
