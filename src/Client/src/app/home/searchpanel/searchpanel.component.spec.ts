@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeSearchpanelComponent } from './home-searchpanel.component';
+import { SearchpanelComponent } from './searchpanel.component';
 
 describe('HomeSearchpanelComponent', () => {
-  let component: HomeSearchpanelComponent;
-  let fixture: ComponentFixture<HomeSearchpanelComponent>;
+  let component: SearchpanelComponent;
+  let fixture: ComponentFixture<SearchpanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeSearchpanelComponent ]
+      declarations: [ SearchpanelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeSearchpanelComponent);
+    fixture = TestBed.createComponent(SearchpanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

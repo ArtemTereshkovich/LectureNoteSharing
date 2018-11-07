@@ -1,0 +1,22 @@
+<div class="card mb-4">
+  <div class="card-body">
+
+    <h2 class="card-title">{{ lectureNote.title }}</h2>
+    <p class="lead">Description : {{ lectureNote.description }}</p>
+    <p class="card-text">Date of creation : {{ lectureNote.dateOfCreate | date: 'longDate' }}</p>
+
+    <button 
+      (click)='readButtonClick(lectureNote.id)' 
+      class="btn btn-secondary">Read</button>
+
+    <div style="background-color: white;" class="card-footer text-muted">
+      <app-lecturenote-preview-rating
+        [lectureNoteId]='lectureNote.id'>        
+      </app-lecturenote-preview-rating>
+      <app-lecturenote-preview-tags
+        [tagsId]='lectureNote.tagsId'>
+      </app-lecturenote-preview-tags>
+    </div>
+    
+  </div>
+</div>
