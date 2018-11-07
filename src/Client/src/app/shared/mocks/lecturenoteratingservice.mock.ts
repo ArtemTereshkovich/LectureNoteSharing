@@ -12,7 +12,7 @@ export class LectureNoteRatingServiceMock {
       id: 'rating1',
       lectureNoteId: lectureNoteId,
       rating: 140,
-      isFavorite: false
+      isFavorite: true
     };
     return of(rating);
   }

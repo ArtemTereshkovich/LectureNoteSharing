@@ -6,6 +6,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LecturenotePreviewRatingComponent } from '../lecturenote-preview-rating/lecturenote-preview-rating.component';
 import { LecturenotePreviewTagsComponent } from '../lecturenote-preview-tags/lecturenote-preview-tags.component';
 import { LectureNoteTagServiceMock } from '../../mocks/lecturenotetagservice.mock';
+import { LectureNoteRatingServiceMock } from '../../mocks/lecturenoteratingservice.mock';
 
 @Component({
   selector: 'app-test-cmp-lecturenotepreview',
@@ -28,7 +29,10 @@ describe('LecturenotePreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [LectureNoteTagServiceMock],
+      providers: [
+        LectureNoteRatingServiceMock,
+        LectureNoteTagServiceMock
+      ],
       declarations: [
         LecturenotePreviewComponent,
         TestLecturenotePreviewComponentWrapperComponent,

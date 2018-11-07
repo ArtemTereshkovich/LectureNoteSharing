@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LecturenotePreviewRatingComponent } from './lecturenote-preview-rating.component';
+import { LectureNoteRatingServiceMock } from '../../mocks/lecturenoteratingservice.mock';
 
 describe('LecturenotePreviewRatingComponent', () => {
   let component: LecturenotePreviewRatingComponent;
@@ -8,6 +9,7 @@ describe('LecturenotePreviewRatingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [LectureNoteRatingServiceMock],
       declarations: [ LecturenotePreviewRatingComponent ]
     })
     .compileComponents();

@@ -1,3 +1,13 @@
-<div [hidden]='loading'>
-  <p class="card-text">Rating : {{ rating.rating }}</p>  
+<div style="padding: 5px;" [hidden]='loading'>  
+  <button
+   class="btn btn-sm float-right"
+   [ngClass]="{'disbled': submitting,
+               'btn-danger': rating.isFavorite,
+               'btn-dark': !rating.isFavorite 
+              }">
+    <p class="card-text">
+      {{ rating.rating }}  
+      <span class="ion-ios-heart"></span> 
+    </p>
+  </button>
 </div>

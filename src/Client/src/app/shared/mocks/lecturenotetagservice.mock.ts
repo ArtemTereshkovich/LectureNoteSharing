@@ -11,17 +11,17 @@ export class LectureNoteTagServiceMock {
     const tags: Array<Tag> = [
       {
         id: 'tag1',
-        text: 'Simple Tag 1',
+        text: 'anime',
         countOfUse: 3
       },
       {
         id: 'tag2',
-        text: 'Simple Tag 2',
+        text: 'hentai',
         countOfUse: 2
       },
       {
         id: 'tag3',
-        text: 'Simple Tag 3',
+        text: 'aoi',
         countOfUse: 1
       }
     ];

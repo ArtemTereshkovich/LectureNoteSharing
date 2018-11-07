@@ -13,9 +13,11 @@ export class LecturenotePreviewRatingComponent implements OnInit {
   private lectureNoteId: string;
   public rating: RatingPreview;
   public loading: Boolean;
+  public submitting: Boolean;
 
   constructor(private lectureNoteRatingService: LectureNoteRatingServiceMock) {
     this.loading = true;
+    this.submitting = true;
     this.rating = null;
    }
 
@@ -28,6 +30,7 @@ export class LecturenotePreviewRatingComponent implements OnInit {
     this.lectureNoteRatingService.getRatingByLectureNoteId(this.lectureNoteId).subscribe(rating => {
       this.rating = rating;
       this.loading = false;
+      this.submitting = false;
     });
   }
 }
