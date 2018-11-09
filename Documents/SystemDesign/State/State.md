@@ -19,4 +19,4 @@
 
 ### 4. Выставление рейтинга<a name="4"></a>
 
-![Выставление рейтинга](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/State/StateRagingDiagram.jpg)
+![Выставление рейтинга](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/State/StateRatingDiagram.jpg)
