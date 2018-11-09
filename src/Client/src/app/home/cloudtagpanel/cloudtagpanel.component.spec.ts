@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeCloudtagpanelComponent } from './home-cloudtagpanel.component';
+import { CloudtagpanelComponent } from './cloudtagpanel.component';
 
-describe('HomeCloudtagpanelComponent', () => {
-  let component: HomeCloudtagpanelComponent;
-  let fixture: ComponentFixture<HomeCloudtagpanelComponent>;
+describe('CloudtagpanelComponent', () => {
+  let component: CloudtagpanelComponent;
+  let fixture: ComponentFixture<CloudtagpanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeCloudtagpanelComponent ]
+      declarations: [ CloudtagpanelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeCloudtagpanelComponent);
+    fixture = TestBed.createComponent(CloudtagpanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

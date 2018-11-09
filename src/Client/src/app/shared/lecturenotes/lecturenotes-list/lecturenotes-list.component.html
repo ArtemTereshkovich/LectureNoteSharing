@@ -1,0 +1,13 @@
+<app-lecturenote-preview 
+  [hidden]='loading'
+  *ngFor='let lectureNote of lectureNotes'
+  [lectureNote]='lectureNote'>  
+</app-lecturenote-preview>
+
+<pagination 
+  [hidden]='loading'
+  [itemsPerPage]='lectureNoteQuery.limit' 
+  [totalItems]='totalItems' 
+  [(ngModel)]='currentPage'
+  (pageChanged)='pageChanged($event)'>
+</pagination>

@@ -1,26 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
-import { HomeSearchpanelComponent } from './home/home-searchpanel/home-searchpanel.component';
-import { HomeCloudtagpanelComponent } from './home/home-cloudtagpanel/home-cloudtagpanel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeModule } from './home/home.module';
+import { RouterModule } from '@angular/router';
+import { JWTService } from './shared/services/jwt.service';
+import { SharedModule } from './shared/shared.module';
+import { LectureNotesServiceMock } from './shared/mocks/lecturenotesservice.mock';
+import { LectureNoteTagServiceMock } from './shared/mocks/lecturenotetagservice.mock';
+import { LectureNoteRatingServiceMock } from './shared/mocks/lecturenoteratingservice.mock';
+
+const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
 @NgModule({
   declarations: [
-    HomeCloudtagpanelComponent,
-    HomeSearchpanelComponent,
     AppComponent,
-    HomeComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
-    AppRoutingModule
+    rootRouting,
+    HomeModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+      JWTService,
+      LectureNotesServiceMock,
+      LectureNoteTagServiceMock,
+      LectureNoteRatingServiceMock
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

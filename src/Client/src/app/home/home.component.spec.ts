@@ -1,7 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
-import { HomeCloudtagpanelComponent } from './home-cloudtagpanel/home-cloudtagpanel.component';
-import { HomeSearchpanelComponent } from './home-searchpanel/home-searchpanel.component';
+import { CloudtagpanelComponent } from './cloudtagpanel/cloudtagpanel.component';
+import { SearchpanelComponent } from './searchpanel/searchpanel.component';
+import { SharedModule } from '../shared/shared.module';
+import { LectureNotesServiceMock } from '../shared/mocks/lecturenotesservice.mock';
+import { LectureNotePreview } from '../shared/models/lecturenotes.models';
+import { LectureNoteTagServiceMock } from '../shared/mocks/lecturenotetagservice.mock';
+import { LectureNoteRatingServiceMock } from '../shared/mocks/lecturenoteratingservice.mock';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -9,11 +14,19 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        SharedModule
+      ],
       declarations: [
         HomeComponent,
-        HomeCloudtagpanelComponent,
-        HomeSearchpanelComponent
-      ]
+        CloudtagpanelComponent,
+        SearchpanelComponent,
+      ],
+      providers: [
+        LectureNotesServiceMock,
+        LectureNoteTagServiceMock,
+        LectureNoteRatingServiceMock
+      ],
     })
     .compileComponents();
   }));
