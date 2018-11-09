@@ -15,8 +15,8 @@ const homeRouting: ModuleWithProviders = RouterModule.forChild([
 
 @NgModule({
     imports: [
-        homeRouting,
-        SharedModule
+        SharedModule,
+        homeRouting
     ],
     declarations: [
         HomeComponent,
