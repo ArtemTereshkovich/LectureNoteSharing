@@ -11,6 +11,7 @@ import { LectureNotesServiceMock } from './shared/mocks/lecturenotesservice.mock
 import { LectureNoteTagServiceMock } from './shared/mocks/lecturenotetagservice.mock';
 import { LectureNoteRatingServiceMock } from './shared/mocks/lecturenoteratingservice.mock';
 import { FormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
 import { CreateModule } from './create/create.module';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -22,6 +23,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   ],
   imports: [
     rootRouting,
+    MarkdownModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
     BrowserModule,
