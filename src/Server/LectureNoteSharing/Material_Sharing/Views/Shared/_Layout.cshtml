@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    @await Html.PartialAsync("_IncludeCssLayout")
+</head>
+<body>  
+    @await Html.PartialAsync("_NavBarLayOut")
+    <div>
+        <div class="container" style="padding-top:55px;">
+            @RenderBody() 
+        </div>
+    </div>
+    @await Html.PartialAsync("_IncludeScriptLayout")        
+    <script>       
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

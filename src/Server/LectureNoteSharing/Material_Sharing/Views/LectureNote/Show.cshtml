@@ -1,0 +1,130 @@
+@model LectureNoteViewModel
+@{
+    ViewData["Title"] = "Lecture Note";
+    Layout = "~/Views/LectureNote/_LectureNoteViewLayout.cshtml";
+}
+
+<!-- Title -->
+<h1 class="mt-4">@Model.Title</h1>
+<!-- Author -->
+<p class="lead">
+    by
+    <a href="#">@Model.AuthorUsername</a>
+    <i style="float: right;"><small>Speciality : </small>@Model.SpecialtyNumber</i>
+    
+</p>
+
+
+<hr>
+<!-- Date/Time -->
+<p>Posted on @Model.DateOfCreate</p>
+<hr>
+<div id="text">
+    
+</div>
+
+<hr>
+@foreach (var tag in Model.Tags)
+{
+    <a href="#">@tag</a>
+}
+<hr>
+
+<!-- Comments Form -->
+<div class="card my-4">
+    <h5 class="card-header">Leave a Comment:</h5>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <textarea id="commenttext" class="form-control" rows="3"></textarea>
+            </div>
+            <button id="commentbtn"type="button" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div id="comments"></div>
+<!-- Single Comment -->
+
+
+@section Scripts {
+    <script>
+    var postId = '@Model.Id';
+    var userId = '@ViewData["UserId"]'
+
+    let transportType = signalR.TransportType.WebSockets;
+    let connection = new signalR.HubConnection('/comments/live', { transport: transportType });
+
+    connection.on('AddComment',addComment);
+    connection.start().then(() => 
+        connection.invoke('startListenAsync',postId));    
+
+    var converter = new showdown.Converter();
+
+    $(window).ready(function(){
+        $('#text').html( converter.makeHtml('@Model.Text')); 
+        
+        $.ajax({
+            url : '/comments/get?postId=' + postId,
+            type : 'GET',
+            success : addComments
+        });         
+    });
+    
+    function addComments(comments){
+        console.log(comments);
+        $.each(comments,function(index){
+            addComment(comments[index]);    
+        })
+    };
+
+    function addComment(comment){
+        
+        var commentEl = document.createElement('div');
+        commentEl.className += 'media mb-4';
+
+        var image = document.createElement('img');
+        image.className += 'd-flex mr-3 rounded-circle';
+        image.setAttribute('src',"http://placehold.it/50x50");
+
+        var commentBody = document.createElement('div');
+        commentBody.className += 'media-body'
+
+        var commentTitle = document.createElement('h5');
+        commentTitle.className += 'mt-0';
+        commentTitle.innerText = comment.author;
+
+        var commentDate = document.createElement('small');
+        commentDate.innerText = comment.date;
+        commentDate.className += 'muted';
+        commentDate.style ='float:right;'
+
+        commentTitle.appendChild(commentDate); 
+
+        var commentText = document.createElement('p');
+        commentText.innerText += comment.text;
+
+        commentBody.appendChild(commentTitle);
+        commentBody.appendChild(commentText);
+        
+
+        commentEl.appendChild(image);
+        commentEl.appendChild(commentBody);
+
+        $('#comments').prepend(commentEl);
+    };
+    
+    $('#commentbtn').on('click',function(){
+        var comment = {CommentText : $('#commenttext').val(),
+            LectureNoteId : postId,
+            AuthorId : userId};
+            console.log(comment);
+            connection.invoke('PostComment',comment);  
+    });
+    </script>
+}
+
+
+     
+
+ 
