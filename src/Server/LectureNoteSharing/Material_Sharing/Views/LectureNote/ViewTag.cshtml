@@ -1,0 +1,38 @@
+
+@{
+    ViewData["Title"] = "Lecture Notes";
+    Layout = "~/Views/LectureNote/_LectureNoteViewLayout.cshtml";
+}
+
+<h1 class="my-4 header">@ViewData["Title"]</h1>
+
+<div id="posts">
+    
+</div>
+
+
+@section Scripts {
+    <script>
+    
+        var tag = '@ViewData["Tag"]';
+       var page = 1;
+       var lockScroll = false;
+       $(window).on('scroll', onScroll);
+      function onScroll() {
+             $(window).off('scroll', onScroll); 
+            end = $("#end").offset().top;
+            var viewEnd = $(window).scrollTop() + $(window).height();
+            var distance = end - viewEnd;                 
+            if (distance < 300){
+                                
+                if(lockScroll != true )
+                   request(page);     
+                else          
+                    $(window).on('scroll', onScroll); 
+            }
+            else
+                $(window).on('scroll', onScroll);             
+        };
+    </script>   
+    @await Html.PartialAsync("_IncludeLectureNoteTagJs")
+}

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Material_Sharing.DAL\Material_Sharing.DAL.csproj"/>
+    <ProjectReference Include="..\Material_Sharing.ViewModel\Material_Sharing.ViewModel.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2"/>
+    <PackageReference Include="Sendgrid" Version="9.9.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0-preview1-final"/>
+  </ItemGroup>
+</Project>
