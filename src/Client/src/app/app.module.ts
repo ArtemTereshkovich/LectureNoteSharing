@@ -11,7 +11,8 @@ import { SharedModule } from './shared/shared.module';
 import { LectureNotesServiceMock } from './shared/mocks/lecturenotesservice.mock';
 import { LectureNoteTagServiceMock } from './shared/mocks/lecturenotetagservice.mock';
 import { LectureNoteRatingServiceMock } from './shared/mocks/lecturenoteratingservice.mock';
-
+import { CreateModule } from './create/create.module';
+import { FormsModule } from '@angular/forms';
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
 @NgModule({
@@ -20,11 +21,13 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     HeaderComponent
   ],
   imports: [
-    SharedModule,
-    BrowserModule,
     rootRouting,
+    BrowserAnimationsModule,
+    FormsModule,
+    BrowserModule,
+    SharedModule,
     HomeModule,
-    BrowserAnimationsModule
+    CreateModule,
   ],
   providers: [
       JWTService,
