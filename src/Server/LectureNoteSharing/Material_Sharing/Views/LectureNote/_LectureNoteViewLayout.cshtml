@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    @await Html.PartialAsync("_IncludeCssLayout")
+    @await Html.PartialAsync("_IncludeLectureNoteCss")   
+</head>
+<body>
+    @await Html.PartialAsync("_NavBarLayOut")
+    <div class="container" style="padding-top:55px;">
+
+        <div class="row">
+
+        <!-- Blog Entries Column -->
+            <div class="col-md-8">               
+
+                @RenderBody()
+
+                
+            </div>
+
+            <div class="col-md-4">
+            <!-- Search Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">Search</h5>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button">Go</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>                    
+                    <!-- Tags Widget -->          
+                <div class="card my-4" style="min-width: width 300px;">
+                    <h5 class="card-header">Tags</h5>
+                    <div class="card-body">
+                        <div id="tag-cloud" style="padding-left:50px;"></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <div id="end"></div>
+    <!-- /.container -->
+
+    @await Html.PartialAsync("_IncludeScriptLayout") 
+    @await Html.PartialAsync("_CloudTagScriptPartial")
+    <script>
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

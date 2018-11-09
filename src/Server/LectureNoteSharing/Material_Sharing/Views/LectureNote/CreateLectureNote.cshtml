@@ -1,0 +1,44 @@
+@model Material_Sharing.ViewModel.LectureNoteService.LectureNoteViewModel
+
+@{
+    ViewData["Title"] = "Create Lecture Note";
+}
+
+<div class="form panel-success">
+    <div class="panel-heading text-center"><h4>@ViewData["Title"]</h4></div>
+    <div class="panel-body">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title">Title:</label>
+                <input class="form-control" asp-for="Title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialtyNumber">Specialty Number:</label>
+                <input class="form-control" asp-for="SpecialtyNumber" />
+                <span asp-validation-for="SpecialtyNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description:</label>
+                <textarea asp-for="Description" rows="3" placeholder="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text">Text:</label>
+                <textarea id="markdown" class="form-control" rows="6" placeholder="Description" asp-for="Text"></textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">
+                    Create Lecture Note
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    @await Html.PartialAsync("_MarkDownScriptPartial")
+}
