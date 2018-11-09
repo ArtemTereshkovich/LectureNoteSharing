@@ -1,0 +1,1 @@
+![ClassDiagram](https://github.com/artemtereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/Class/ClassDiagram.jpg)

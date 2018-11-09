@@ -1,11 +1,14 @@
-<div class="row">
+<div style="display:flex;">
 
-  <div class="col-md-8">
+  <div style="overflow:auto;" class="col-md-8">
+      <app-lecturenotes-list
+        [defaultConfig]="lectureNoteListOptions">
+      </app-lecturenotes-list>
   </div>
 
-  <div class="col-md-3">
-    <app-home-searchpanel></app-home-searchpanel>
-    <app-home-cloudtagpanel></app-home-cloudtagpanel>
+  <div style="overflow:hidden;" class="col-md-3">
+    <app-searchpanel></app-searchpanel>
+    <app-cloudtagpanel></app-cloudtagpanel>
   </div>
 
 </div>

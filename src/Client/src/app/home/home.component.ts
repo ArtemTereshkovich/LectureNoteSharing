@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HomeCloudtagpanelComponent } from './home-cloudtagpanel/home-cloudtagpanel.component';
-import { HomeSearchpanelComponent } from './home-searchpanel/home-searchpanel.component';
+import { CloudtagpanelComponent } from './cloudtagpanel/cloudtagpanel.component';
+import { SearchpanelComponent } from './searchpanel/searchpanel.component';
+import { LectureNotesListOptions } from '../shared/lecturenotes/lecturenotes-list/lecutrenotes-list.config';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,21 @@ import { HomeSearchpanelComponent } from './home-searchpanel/home-searchpanel.co
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild(HomeCloudtagpanelComponent)
-  public cloudTagPanelComponent: HomeCloudtagpanelComponent;
-  @ViewChild(HomeSearchpanelComponent)
-  public searchPanelComponent: HomeSearchpanelComponent;
+  @ViewChild(CloudtagpanelComponent)
+  public cloudTagPanelComponent: CloudtagpanelComponent;
+  @ViewChild(SearchpanelComponent)
+  public searchPanelComponent: SearchpanelComponent;
+
+  lectureNoteListOptions: LectureNotesListOptions;
 
   constructor() { }
 
   ngOnInit() {
+    this.lectureNoteListOptions = {
+      filter: null,
+      countPerPage: 5,
+      currentPage: 1
+    };
   }
 
 }

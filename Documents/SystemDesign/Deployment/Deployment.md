@@ -1,0 +1,1 @@
+![Deployment](https://github.com/artemtereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/Deployment/DeployDiagram.jpg)
