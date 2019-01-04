@@ -4,3 +4,5 @@
 Lecture Note Sharing - это сайт для обмена конспектами по предметами между студентами. Он позволяет писать и редактировать конспекты с помощью Markdown редактора, а также комментировать созданные конспекты.
 ### Requirements: ([Ru](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/Requirements/Requirements.md))
 ### Diagrams: ([Ru](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/Documents/SystemDesign/SystemDesign.md))
+### Test Plan: ([Ru](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/TestPlan.md))
+### Test Result: ([Ru](https://github.com/ArtemTereshkovich/LectureNoteSharing/blob/master/TestResult.md))
